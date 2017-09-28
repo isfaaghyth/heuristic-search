@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.ArrayList;
+
 /**
  * Kelas Search yang berisi method static untuk algoritma search. Yaitu
  * algoritma search BFS dan Astar.
@@ -16,10 +18,19 @@ public class Search {
      * @return jumlah node yang diexpand
      */
     public static int bfs(Board initState) {
+        int cost = 100;
+        int sum = 0;
         System.out.println("====== BFS ======");
-        int h = initState.heuristic();
-        return h;
-
+        initState.printBoard();
+        ArrayList<Board> bfsBoard = initState.getNextMove();
+        for (Board b : bfsBoard) {
+            if (b.getCost() >= cost) {
+                cost = b.getCost();
+            }
+            sum++;
+        }
+        //recursive board terkecil
+        return sum;
     }
 
     /**
@@ -31,9 +42,8 @@ public class Search {
      */
     public static int astar(Board initState) {
         System.out.println("====== AStar ======");
-        int g = initState.getCost();
-        int h = initState.heuristic();
-        return g + h;
+        
+        return 0;
     }
 
 }

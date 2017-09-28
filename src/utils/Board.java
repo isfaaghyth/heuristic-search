@@ -176,8 +176,8 @@ public class Board implements Comparable<Board> {
     public int heuristic() {
         int manhattanDistanceSum = 0;
         // TODO: Implementasikan! Tidak boleh heuristik = 0 atau fungsi konstan (ref: 12526792)
-        for (int x = 0; x < rows; x++) { // x-dimension, traversing rows (i)
-            for (int y = 0; y < cols; y++) { // y-dimension, traversing cols (j)
+        for (int x = 0; x < rows; x++) { // x-dimension, rows (i)
+            for (int y = 0; y < cols; y++) { // y-dimension, cols (j)
                 int value = board[x][y]; // tiles array contains board elements
                 if (value != 0) { // we don't compute MD for element 0
                     int targetX = (value - 1) / rows; // expected x-coordinate (row)
