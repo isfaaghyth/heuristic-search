@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author
  */
 public class Search {
-
+    
     /**
      * TODO: IMPLEMENTASIKAN Method untuk melakukan BFS dari suatu initial
      * state. Di dalamnya juga dicetak path dari awal menuju goal.
